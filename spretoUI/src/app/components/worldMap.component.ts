@@ -1,7 +1,6 @@
 import { MapServices } from './../services/mapServiceComponent';
 import { Component, OnInit } from '@angular/core';
 import { CountriesData, ChartErrorEvent, ChartSelectEvent } from 'countries-map';
-
 //https://github.com/jagomf/countries-map.git
 
 @Component({
