@@ -1,0 +1,2 @@
+<!-- <countries-map [data]="mapData" [apiKey]="abcdef"></countries-map> -->
+<countries-map [data]="mapData" (chartReady)="mapReady()" (chartError)="mapError($event)" (chartSelect)="mapClicked($event)" ></countries-map>
