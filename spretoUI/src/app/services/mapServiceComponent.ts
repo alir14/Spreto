@@ -1,3 +1,5 @@
+import { CityModel } from './../models/CityModel';
+import { CountryModel} from './../models/CountryModel';
 import { Injectable } from '@angular/core';
 import { CountriesData } from 'countries-map';
 
@@ -260,5 +262,18 @@ export class MapServices{
           };
 
           return data;
+    }
+
+    getCities(id:number){
+        
+        let list: CityModel[] = [
+            new CityModel(1,'KL',10,10,10,10),
+            new CityModel(1,'Petalingjaya',1,5,5,8),
+            new CityModel(1,'Penang',10,7,1,1),
+        ];
+
+        let country:CountryModel = new CountryModel(136,'Malaysia',list);
+
+        return country;
     }
 }
