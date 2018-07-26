@@ -1,3 +1,2 @@
-<!-- <countries-map [data]="mapData" [apiKey]="abcdef"></countries-map> -->
-<countries-map [data]="mapData" (chartReady)="mapReady()" (chartError)="mapError($event)" (chartSelect)="mapClicked($event)" minColor="Gray" maxColor="Silver" 
+<countries-map #cmap [data]="mapData" (chartReady)="mapReady()" (chartError)="mapError($event)" (chartSelect)="mapClicked($event)" minColor="Gray" maxColor="Silver" 
     noDataColor="#000000" ></countries-map>

@@ -1,6 +1,7 @@
 import { MapServices } from './../services/mapServiceComponent';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CountriesData, ChartErrorEvent, ChartSelectEvent } from 'countries-map';
+
 //https://github.com/jagomf/countries-map.git
 
 @Component({
@@ -13,6 +14,8 @@ export class WorldMap implements OnInit{
 
     mapData: CountriesData;
     service:MapServices;
+    @ViewChild('cmap') cmap;
+
 
     constructor(private mapService: MapServices){
         this.service = mapService;
@@ -24,7 +27,9 @@ export class WorldMap implements OnInit{
 
     mapReady(){
         console.log('map loaded');
+        this.cmap.showCaption = false;
     }
+
     
     mapError(event: ChartErrorEvent){
         console.log(event);
