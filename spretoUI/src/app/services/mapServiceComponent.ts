@@ -267,9 +267,9 @@ export class MapServices{
     getCities(id:number){
         
         let list: CityModel[] = [
-            new CityModel(1,'KL',10,10,10,10),
-            new CityModel(1,'Petalingjaya',1,5,5,8),
-            new CityModel(1,'Penang',10,7,1,1),
+            new CityModel(1,'KL',10,10,10,10,"default.png"),
+            new CityModel(1,'Petalingjaya',1,5,5,8,"default.png"),
+            new CityModel(1,'Penang',10,7,1,1,"default.png"),
         ];
 
         let country:CountryModel = new CountryModel(136,'Malaysia',list);

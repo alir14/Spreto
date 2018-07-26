@@ -13,16 +13,15 @@ import { ActivatedRoute } from '@angular/router';
 export class CityList implements OnInit{
     
     Id:number;
-    service: MapServices;
     selectedCountry: CountryModel;
 
     constructor(private route: ActivatedRoute, private mapService: MapServices){
-        this.Id = this.route.snapshot.params.Id;
-        this.service = mapService;
+        //console.log(this.route.snapshot.params.id);
+        this.Id = this.route.snapshot.params.id;
     }
 
     ngOnInit(){
-        this.selectedCountry = this.service.getCities(this.Id);
+        this.selectedCountry = this.mapService.getCities(this.Id);
     }
 
 }

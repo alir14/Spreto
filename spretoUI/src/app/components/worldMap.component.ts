@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MapServices } from './../services/mapServiceComponent';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CountriesData, ChartErrorEvent, ChartSelectEvent } from 'countries-map';
@@ -13,16 +14,14 @@ import { CountriesData, ChartErrorEvent, ChartSelectEvent } from 'countries-map'
 export class WorldMap implements OnInit{
 
     mapData: CountriesData;
-    service:MapServices;
     @ViewChild('cmap') cmap;
 
 
-    constructor(private mapService: MapServices){
-        this.service = mapService;
+    constructor(private mapService: MapServices,  private router: Router){
     }
 
     ngOnInit(){
-        this.mapData = this.service.getMapData();
+        this.mapData = this.mapService.getMapData();
     }
 
     mapReady(){
@@ -37,6 +36,10 @@ export class WorldMap implements OnInit{
 
     mapClicked(event: ChartSelectEvent){
         console.log(event);
+        let path = '/cities?Id=' + event.value;
+        console.log(path);
+        this.router.navigate(['/cities', event.value]);
+
     }
 
 }

@@ -1,2 +1,18 @@
 <h1>Cities</h1>
-{{selectedCountry}}
+
+<div class="container" *ngFor="let city of selectedCountry.Cities;let i = index">
+    <div class="row">
+        <div class="card" >
+            <img class="card-img-top" src="../../assets/cities/{{city.ImageName}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{city.Name}}</h5>
+                <p class="card-text">
+                    {{city.FoodGrade}}
+                    {{city.OverallRate}}
+                    {{city.WIFIGrade}}
+                    {{city.ExpensesGrade}}
+                </p>
+                <a href="#" class="btn btn-primary">see more</a>
+            </div>
+        </div>
+    </div>

@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path:'', redirectTo:'/worldmap', pathMatch:'full'},
   {path:'worldmap', component: WorldMap },
-  {path:'cities', component: CityList },
+  {path:'cities/:id', component: CityList },
   {path:'**', component: NotFound }
 ]
 
